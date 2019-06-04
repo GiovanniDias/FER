@@ -4,10 +4,10 @@ import numpy as np
 import pandas as pd
 from sklearn.preprocessing import MinMaxScaler
 # internal packages
+from feature_extraction.lbp import generateLBP
 from feature_extraction.mask import getMasks
 from feature_extraction.detection import Detector
 from feature_extraction.histogram import Histogram
-from feature_extraction.extractors.lbp import generateLBP
 
 
 def preprocess(image):
@@ -20,7 +20,7 @@ def concatenateHistogram(hists):
     scaler = MinMaxScaler()
     feature_vector = np.array([])
     for hist in hists:
-        feature_vector = np.append(scaler.fit_transform(feature_vector, hist))
+        feature_vector = np.append(feature_vector, scaler.fit_transform(hist))
     return feature_vector
 
 

@@ -81,7 +81,7 @@ if __name__ == '__main__':
         [1, 2, 4, 2, 3, 2, 3, 2], [1, 2, 4, 2, 3, 1, 3, 1]
     ]
     # GET ONLY THE CLIMAX IMAGE
-    combinations = [[1, 1, 1, 1, 1, 1, 1, 1]]
+    # combinations = [[1, 1, 1, 1, 1, 1, 1, 1]]
     for order in range(len(combinations)):
         csv = getImagesData(combinations[order])
         path = "files/paths/paths_and_labels" + str(order + 1) + ".csv"

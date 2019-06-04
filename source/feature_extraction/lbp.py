@@ -50,7 +50,7 @@ def generateLBP(image, mask, init=[1, 1]):
                 center_pixel = int(encoded_value, 2)
                 lbp[row][col] = center_pixel
 
-    return [lbp]
+    return lbp
 
 
 if __name__ == '__main__':
@@ -58,5 +58,5 @@ if __name__ == '__main__':
     from imutils import resize
     image = resize(cv2.imread("images/test/many_faces.jpg", 0), height=500)
     lbp = generateLBP(image, np.ones(image.shape))
-    cv2.imshow("LBP", lbp[0])
+    cv2.imshow("LBP", lbp)
     cv2.waitKey(0)
