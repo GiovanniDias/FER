@@ -68,7 +68,7 @@ def getFeatures(loaded_dataframe, bins = 32):
 
 
 if __name__ == '__main__':
-    for i in range(1,5):
+    for i in range(0,1):
         bins = 16
         path1 = 'files/paths/paths_and_labels' + str(i) + '.csv'
         path2 = 'files/features/extracted_features' + str(i) + '_' + str(bins) + '.csv'

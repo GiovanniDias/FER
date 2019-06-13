@@ -5,6 +5,7 @@
 # Visual Studio Code - https://code.visualstudio.com/
 .settings/
 .vscode/
+not_best_features/
 yalefaces/
 tsconfig.json
 jsconfig.json
