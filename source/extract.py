@@ -28,13 +28,12 @@ def getFeatureName(mark, bin):
     return 'f_{}_{}'.format(str(mark).zfill(2), str(bin).zfill(3))
 
 
-def getFeatures(loaded_dataframe):
+def getFeatures(loaded_dataframe, bins = 32):
     # Instantiation
     detector = Detector()
     histogram = Histogram()
 
     feature_vectors = []
-    bins = 32
     for k, path in enumerate(loaded_dataframe['image_path']):
         print("Detectar Face na imagem {}.".format(k))
         image = preprocess(cv2.imread(path, 0))
@@ -69,6 +68,10 @@ def getFeatures(loaded_dataframe):
 
 
 if __name__ == '__main__':
-    df = pd.read_csv('files/paths/paths_and_labels1.csv')
-    features = getFeatures(df)
-    features.to_csv('files/features/extracted_features2_32.csv', index=False)
+    for i in range(1,5):
+        bins = 16
+        path1 = 'files/paths/paths_and_labels' + str(i) + '.csv'
+        path2 = 'files/features/extracted_features' + str(i) + '_' + str(bins) + '.csv'
+        df = pd.read_csv(path1)
+        features = getFeatures(df, bins)
+        features.to_csv(path2, index=False)

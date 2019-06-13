@@ -9,7 +9,7 @@ def getMasks(image, face, landmarks_index=(0, 67)):
     mask_size = int(face['face'][-1] * 0.05)
     face_mask, masks = generateMask(
         image, face['landmarks'], mask_size, 'mask',
-        'circle', first_landmark, last_landmark, True
+        'circle', first_landmark, last_landmark, False
     )
     return {'face': face_mask, 'marks': masks}
 
