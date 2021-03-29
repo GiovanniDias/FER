@@ -76,7 +76,7 @@ pycups==1.9.72
 pycurl==7.43.0.2
 pydbus==0.6.0
 pyenchant==2.0.0
-Pygments==2.4.2
+Pygments==2.7.4
 pygobject==3.28.3
 pygpgme==0.3
 pyinotify==0.9.6
